@@ -37,7 +37,7 @@ public class GetApiController {
 
         StringBuilder sb = new StringBuilder();
 
-        queryParam.entrySet().forEach( entry -> {
+        queryParam.entrySet().forEach(entry -> {
             System.out.println(entry.getKey());
             System.out.println(entry.getValue());
 

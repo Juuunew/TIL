@@ -16,6 +16,7 @@ public class ResponseApiController {
     }
 
     // JSON
+
     /**
      * request -> object mapper -> object -> method -> object -> object mapper -> json -> response
      */
