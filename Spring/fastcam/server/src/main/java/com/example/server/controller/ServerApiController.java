@@ -103,8 +103,8 @@ public class ServerApiController {
 
         RequestEntity<Void> req = RequestEntity
                 .get(uri)
-                .header("X-Naver-Client-Id", "_HXA8Zv3YbyOEK5w96gs")
-                .header("X-Naver-Client-Secret", "dYufTGCAuA")
+                .header("X-Naver-Client-Id", "")
+                .header("X-Naver-Client-Secret", "")
                 .build();
 
         ResponseEntity<String> result = restTemplate.exchange(req, String.class);
