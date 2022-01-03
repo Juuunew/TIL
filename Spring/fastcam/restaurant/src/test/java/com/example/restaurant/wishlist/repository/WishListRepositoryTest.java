@@ -73,7 +73,7 @@ class WishListRepositoryTest {
     }
 
     @Test
-    void listAllTest() {
+    void findAllTest() {
         var wishListEntity1 = create();
         wishListRepository.save(wishListEntity1);
 
