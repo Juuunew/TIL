@@ -43,10 +43,10 @@ public class ValidationItemControllerV1 {
     @PostMapping("/add")
     public String addItem(@ModelAttribute Item item, RedirectAttributes redirectAttributes, Model model) {
 
-        // 검증 오류 결과를 보관
+        //검증 오류 결과를 보관
         Map<String, String> errors = new HashMap<>();
 
-        // 검증 로직
+        //검증 로직
         if (!StringUtils.hasText(item.getItemName())) {
             errors.put("itemName", "상품 이름은 필수입니다.");
         }
@@ -55,11 +55,11 @@ public class ValidationItemControllerV1 {
             errors.put("price", "가격은 1,000 ~ 1,000,000 까지 허용합니다.");
         }
 
-        if (item.getQuantity() == null || item.getQuantity() > 9999) {
+        if (item.getQuantity() == null || item.getQuantity() >= 9999) {
             errors.put("quantity", "수량은 최대 9,999 까지 허용합니다.");
         }
 
-        // 특정 필드가 아닌 복합 룰 검증
+        //특정 필드가 아닌 복합 룰 검증
         if (item.getPrice() != null && item.getQuantity() != null) {
             int resultPrice = item.getPrice() * item.getQuantity();
             if (resultPrice < 10000) {
@@ -73,7 +73,7 @@ public class ValidationItemControllerV1 {
             return "validation/v1/addForm";
         }
 
-        // 성공 로직
+        //성공 로직
         Item savedItem = itemRepository.save(item);
         redirectAttributes.addAttribute("itemId", savedItem.getId());
         redirectAttributes.addAttribute("status", true);
