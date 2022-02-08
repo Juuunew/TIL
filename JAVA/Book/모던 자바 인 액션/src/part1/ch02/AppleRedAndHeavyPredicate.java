@@ -7,6 +7,7 @@ import static part1.common.Color.RED;
 public class AppleRedAndHeavyPredicate implements ApplePredicate {
     @Override
     public boolean test(Apple apple) {
-        return RED.equals(apple.getColor()) && apple.getWeight() > 150;
+        return RED.equals(apple.getColor())
+                && apple.getWeight() > 150;
     }
 }
