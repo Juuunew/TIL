@@ -39,6 +39,24 @@ public class FilteringApples {
 
         List<Apple> redAndHeavyApples = filter(inventory, new AppleRedAndHeavyPredicate());
         System.out.println("redAndHeavyApples = " + redAndHeavyApples);
+
+        // 다섯 번째 시도 - 익명 클래스 사용
+        List<Apple> redApples = filter(inventory, new ApplePredicate() {    // filterApples 메서드의 동작을 직접 파라미터화
+            @Override
+            public boolean test(Apple apple) {
+                return RED.equals(apple.getColor());
+            }
+        });
+        System.out.println("redApples = " + redApples);
+
+        // 여섯 번째 시도 - 람다 표현식 사용
+        List<Apple> result = filter(inventory, (Apple apple) -> RED.equals(apple.getColor()));
+        System.out.println("result = " + result);
+
+        // 일곱 번째 시도
+        List<Apple> redApples7 = filter(inventory, (Apple apple) -> RED.equals(apple.getColor()));
+        System.out.println("redApples7 = " + redApples7);
+
     }
 
     // 첫 번째 시도 - 녹색 사과 필터링
@@ -110,4 +128,20 @@ public class FilteringApples {
         }
         return result;
     }
+
+    // 일곱 번째 시도 - 리스트 형식으로 추상화
+    public interface Predicate<T> {
+        boolean test(T t);
+    }
+
+    public static <T> List<T> filter(List<T> list, Predicate<T> p) {
+        List<T> result = new ArrayList<>();
+        for (T e : list) {
+            if (p.test(e)) {
+                result.add(e);
+            }
+        }
+        return result;
+    }
+
 }
