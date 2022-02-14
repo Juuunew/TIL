@@ -19,5 +19,3 @@ H
 src/Thread/Thread09.java,4\4\44d220f631ef7811401e09e2248d2b6087c54d95
 9
 	Study.iml,2\0\207bcedb441461a404bd51523f46dcad27e12351
-O
-src/Thread/Synchronization.java,e\2\e28b173422555979244721c3f2abde0259a93706
