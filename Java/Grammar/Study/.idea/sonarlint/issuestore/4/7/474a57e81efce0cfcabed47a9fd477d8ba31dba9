@@ -1,0 +1,10 @@
+
+S	java:S106"9Replace this use of System.out or System.err by a logger.(›óãäüÿÿÿÿ
+;
+java:S2129" Remove this "String" constructor(›óãäüÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Áã‚ïıÿÿÿÿ
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ŠÎ¡‡8¼ºÜ´ï/
+=
+java:S2129" Remove this "String" constructor(ŠÎ¡‡8¼ºÜ´ï/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Ñêï¿8íÜ´ï/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(šğœİ
