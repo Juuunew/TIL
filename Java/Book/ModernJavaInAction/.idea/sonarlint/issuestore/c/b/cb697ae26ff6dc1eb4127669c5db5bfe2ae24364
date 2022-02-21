@@ -1,0 +1,12 @@
+
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(µçÛ°þÿÿÿÿ
+N	java:S106)"9Replace this use of System.out or System.err by a logger.(Þ˜‚Ð
+S	java:S1063"9Replace this use of System.out or System.err by a logger.(’¬±Áøÿÿÿÿ
+N	java:S106<"9Replace this use of System.out or System.err by a logger.(ÛÜ“Õ
+S	java:S106D"9Replace this use of System.out or System.err by a logger.(Ð™ÎÆüÿÿÿÿ
+S	java:S106J"9Replace this use of System.out or System.err by a logger.(¹¦…‡úÿÿÿÿ
+M	java:S106Q"9Replace this use of System.out or System.err by a logger.(óõÝt
+Z	java:S106W"9Replace this use of System.out or System.err by a logger.(Ý’Çýÿÿÿÿ8‹£†äï/
+`
+java:S1192"JDefine a constant instead of duplicating this literal "Cambridge" 5 times.(ý…ÿ‡
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿©‰

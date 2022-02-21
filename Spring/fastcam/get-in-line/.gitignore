@@ -36,5 +36,9 @@ out/
 ### VS Code ###
 .vscode/
 
+<<<<<<< Updated upstream
 ### Properties ###
+=======
+### Properites ###
+>>>>>>> Stashed changes
 /src/main/resources/application.properties
