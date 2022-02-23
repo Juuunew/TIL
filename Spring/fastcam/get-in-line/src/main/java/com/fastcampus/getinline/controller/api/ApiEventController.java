@@ -8,7 +8,7 @@ import java.util.List;
 @RestController
 public class ApiEventController {
 
-    @GetMapping("/evnets")
+    @GetMapping("/events")
     public List<String> getEvents() {
         return List.of("event1", "event2");
     }
@@ -18,17 +18,17 @@ public class ApiEventController {
         return true;
     }
 
-    @GetMapping("/evnets/{eventId}")
+    @GetMapping("/events/{eventId}")
     public String getEvent(@PathVariable Integer eventId) {
         return "event" + eventId;
     }
 
-    @PutMapping("/evnets/{eventId}")
+    @PutMapping("/events/{eventId}")
     public Boolean modifyEvent(@PathVariable Integer eventId) {
         return true;
     }
 
-    @DeleteMapping("/evnets/{eventId}")
+    @DeleteMapping("/events/{eventId}")
     public Boolean removeEvent(@PathVariable Integer eventId) {
         return true;
     }
