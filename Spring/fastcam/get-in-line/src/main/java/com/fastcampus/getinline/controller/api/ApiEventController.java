@@ -1,5 +1,6 @@
 package com.fastcampus.getinline.controller.api;
 
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,8 +10,9 @@ import java.util.List;
 public class ApiEventController {
 
     @GetMapping("/events")
-    public List<String> getEvents() {
-        return List.of("event1", "event2");
+    public List<String> getEvents() throws Exception {
+        throw new HttpRequestMethodNotSupportedException("spring error test");
+        //return List.of("event1", "event2");
     }
 
     @PostMapping("/events")
