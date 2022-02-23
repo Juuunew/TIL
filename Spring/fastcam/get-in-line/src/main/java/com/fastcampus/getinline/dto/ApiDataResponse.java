@@ -1,5 +1,6 @@
 package com.fastcampus.getinline.dto;
 
+import com.fastcampus.getinline.constant.ErrorCode;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -7,16 +8,16 @@ import lombok.ToString;
 @Getter
 @ToString
 @EqualsAndHashCode(callSuper = true)
-public class ApiDataResponse extends com.fastcampus.getinline.dto.ApiErrorResponse {
+public class ApiDataResponse<T> extends ApiErrorResponse {
 
-    private final Object data;
+    private final T data;
 
-    private ApiDataResponse(boolean success, Integer errorCode, String message, Object data) {
-        super(success, errorCode, message);
+    private ApiDataResponse(T data) {
+        super(true, ErrorCode.OK.getCode(), ErrorCode.OK.getMessage());
         this.data = data;
     }
 
-    public static ApiDataResponse of(boolean success, Integer errorCode, String message, Object data) {
-        return new ApiDataResponse(success, errorCode, message, data);
+    public static <T> ApiDataResponse<T> of(T data) {
+        return new ApiDataResponse<>(data);
     }
 }
