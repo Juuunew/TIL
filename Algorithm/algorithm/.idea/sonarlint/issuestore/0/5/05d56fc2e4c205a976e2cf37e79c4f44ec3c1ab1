@@ -1,0 +1,7 @@
+
+—
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Çµí‘
+A
+java:S1905"&Remove this unnecessary cast to "int".(Î ˆýùÿÿÿÿ
+k
+java:S1104"UMake hashTable a static final constant or non-public and provide accessors if needed.(šþÐÅ
