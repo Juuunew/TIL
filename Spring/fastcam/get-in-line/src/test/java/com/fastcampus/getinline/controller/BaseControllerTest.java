@@ -12,7 +12,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest
+@WebMvcTest(BaseController.class)
 class BaseControllerTest {
 
     private final MockMvc mvc;
@@ -21,17 +21,18 @@ class BaseControllerTest {
         this.mvc = mvc;
     }
 
-    @DisplayName("[view][GET] 기본페이지 요청")
+    @DisplayName("[view][GET] 기본 페이지 요청")
     @Test
-    void root() throws Exception {
-        //given
+    void givenNothing_whenRequestingRootPage_thenReturnsIndexPage() throws Exception {
+        // Given
 
-        //when & then
+        // When & Then
         mvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
-                .andExpect(content().string(containsString("This is default page")))
+                .andExpect(content().string(containsString("This is default page.")))
                 .andExpect(view().name("index"))
                 .andDo(print());
     }
+
 }

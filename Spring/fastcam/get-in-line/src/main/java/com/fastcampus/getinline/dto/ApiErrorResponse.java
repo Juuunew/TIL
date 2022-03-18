@@ -21,6 +21,10 @@ public class ApiErrorResponse {
         return new ApiErrorResponse(success, errorCode.getCode(), errorCode.getMessage());
     }
 
+    public static ApiErrorResponse of(Boolean success, ErrorCode errorCode, Exception e) {
+        return new ApiErrorResponse(success, errorCode.getCode(), errorCode.getMessage(e));
+    }
+
     public static ApiErrorResponse of(Boolean success, ErrorCode errorCode, String message) {
         return new ApiErrorResponse(success, errorCode.getCode(), errorCode.getMessage(message));
     }
