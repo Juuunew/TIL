@@ -21,6 +21,10 @@ public class MemberRepository {
         return em.find(Member.class, id);
     }
 
+    /**
+     *  sql = 테이블 대상
+     *  jpql = Entity 객체 대상
+     */
     public List<Member> findAll() {
         return em.createQuery("select m from Member m", Member.class)
                 .getResultList();
@@ -30,5 +34,6 @@ public class MemberRepository {
         return em.createQuery("select m from Member m where m.name = :name", Member.class)
                 .setParameter("name", name)
                 .getResultList();
+
     }
 }
