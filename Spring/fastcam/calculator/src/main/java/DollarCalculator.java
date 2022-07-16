@@ -1,4 +1,4 @@
-public class DollarCalculator implements ICalculator{
+public class DollarCalculator implements ICalculator {
 
     private int price = 1;
     private MarketApi marketApi;

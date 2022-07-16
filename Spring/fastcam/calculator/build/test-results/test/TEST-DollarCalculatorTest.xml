@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DollarCalculatorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-01T11:29:16" hostname="DESKTOP-0TI1MPG" time="0.43">
-  <properties/>
-  <testcase name="dollarTest()" classname="DollarCalculatorTest" time="0.421"/>
-  <testcase name="testHello()" classname="DollarCalculatorTest" time="0.004"/>
-  <testcase name="MockTest()" classname="DollarCalculatorTest" time="0.004"/>
-  <system-out><![CDATA[hello 
+<testsuite name="DollarCalculatorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-01T11:29:16"
+           hostname="DESKTOP-0TI1MPG" time="0.43">
+    <properties/>
+    <testcase name="dollarTest()" classname="DollarCalculatorTest" time="0.421"/>
+    <testcase name="testHello()" classname="DollarCalculatorTest" time="0.004"/>
+    <testcase name="MockTest()" classname="DollarCalculatorTest" time="0.004"/>
+    <system-out><![CDATA[hello
 ]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+    <system-err><![CDATA[]]></system-err>
 </testsuite>

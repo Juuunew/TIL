@@ -26,7 +26,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
                 HttpHeaders.EMPTY,
                 status,
                 request
-                );
+        );
 
         /*return ResponseEntity
                 .status(status)

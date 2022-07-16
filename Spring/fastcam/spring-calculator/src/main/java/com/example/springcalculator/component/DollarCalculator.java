@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class DollarCalculator implements ICalculator{
+public class DollarCalculator implements ICalculator {
 
     private int price = 1;
     private final MarketApi marketApi;

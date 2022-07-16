@@ -16,10 +16,12 @@ import java.util.Base64;
 public class DecodeAop {
 
     @Pointcut("execution(* com.example.aop.controller..*.*(..))")
-    private void cut() {}
+    private void cut() {
+    }
 
     @Pointcut("@annotation(com.example.aop.annotation.Decode)")
-    private void enableDecode() {}
+    private void enableDecode() {
+    }
 
     @Before("cut() && enableDecode()")
     public void before(JoinPoint joinPoint) throws UnsupportedEncodingException {

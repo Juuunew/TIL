@@ -41,7 +41,6 @@ public class ClientApiController {
         restTemplateService.exchange();
         return new UserResponse();
     }*/
-
     @GetMapping("hello")
     public Req<UserResponse> getHello() {
         return restTemplateService.genericExchange();

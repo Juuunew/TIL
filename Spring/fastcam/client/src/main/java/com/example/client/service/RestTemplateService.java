@@ -138,11 +138,11 @@ public class RestTemplateService {
         Req<UserRequest> req = new Req<>();
 
         req.setHeader(
-            new Req.Header()
+                new Req.Header()
         );
 
         req.setResBody(
-            userRequest
+                userRequest
         );
 
         /**
@@ -158,7 +158,8 @@ public class RestTemplateService {
         RestTemplate restTemplate = new RestTemplate();
 
         ResponseEntity<Req<UserResponse>> response
-                = restTemplate.exchange(requestEntity,  new ParameterizedTypeReference<>(){});
+                = restTemplate.exchange(requestEntity, new ParameterizedTypeReference<>() {
+        });
 
         // ResponseEntity 의 getBody    Req 의 getBody
         return response.getBody();

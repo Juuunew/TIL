@@ -59,7 +59,8 @@ public class Main {
         JsonNode cars = jsonNode.get("cars");
         ArrayNode arrayNode = (ArrayNode) cars;
 
-        List<Car> _cars = objectMapper.convertValue(arrayNode, new TypeReference<List<Car>>() {});
+        List<Car> _cars = objectMapper.convertValue(arrayNode, new TypeReference<List<Car>>() {
+        });
         System.out.println("_cars = " + _cars); // _cars = [Car{name='K5', carNumber='11가 1111', type='sedan'}, Car{name='Q5', carNumber='22가 2222', type='SUV'}]
 
         ObjectNode objectNode = (ObjectNode) jsonNode;

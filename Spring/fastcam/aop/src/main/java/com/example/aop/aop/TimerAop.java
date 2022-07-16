@@ -8,14 +8,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
 /**
- * @Componet
- *      -> class 에 등록됨
- *
- * @Bean
- *      -> method 에 등록
- *
- * @Configuration
- *      -> 하나의 class 에 여러가지 Bean 등록록
+ * @Componet -> class 에 등록됨
+ * @Bean -> method 에 등록
+ * @Configuration -> 하나의 class 에 여러가지 Bean 등록록
  */
 
 @Aspect
@@ -23,10 +18,12 @@ import org.springframework.util.StopWatch;
 public class TimerAop {
 
     @Pointcut("execution(* com.example.aop.controller..*.*(..))")
-    private void cut() {}
+    private void cut() {
+    }
 
     @Pointcut("@annotation(com.example.aop.annotation.Timer)")
-    private void enableTimer() {}
+    private void enableTimer() {
+    }
 
     @Around("cut() && enableTimer()")
     public void around(ProceedingJoinPoint joinPoint) throws Throwable {

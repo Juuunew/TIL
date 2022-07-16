@@ -23,7 +23,7 @@ class DollarCalculatorTest {
     }
 
     @Test
-    void dollarTest(){
+    void dollarTest() {
         MarketApi marketApi = new MarketApi();
         DollarCalculator dollarCalculator = new DollarCalculator(marketApi);
 
@@ -37,7 +37,7 @@ class DollarCalculatorTest {
     }
 
     @Test
-    void MockTest(){
+    void MockTest() {
         DollarCalculator dollarCalculator = new DollarCalculator(marketApi);
 
         dollarCalculator.init();

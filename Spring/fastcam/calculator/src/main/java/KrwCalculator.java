@@ -1,4 +1,4 @@
-public class KrwCalculator implements ICalculator{
+public class KrwCalculator implements ICalculator {
 
     private int price = 1;
 

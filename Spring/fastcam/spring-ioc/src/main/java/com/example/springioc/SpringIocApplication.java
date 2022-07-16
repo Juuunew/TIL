@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 스프링 빈이 하나만 있으면 자동으로 매칭이 된다.
  * 하지만 여러 개가 있을 경우엔 스프링에서 어느 것을 매칭해야할 지 모르기 때문에
+ *
  * @Qualifier 를 이용해서 매칭할 빈을 지정해줄 수 있다.
  */
 

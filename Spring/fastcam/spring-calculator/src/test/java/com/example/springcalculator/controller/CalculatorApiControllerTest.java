@@ -69,16 +69,16 @@ class CalculatorApiControllerTest {
         String json = new ObjectMapper().writeValueAsString(req);
 
         mockMvc.perform(
-                        MockMvcRequestBuilders.post("http://localhost:8080/api/minus")
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .content(json)
-                ).andExpect(
-                        MockMvcResultMatchers.status().isOk()
-                ).andExpect(
-                        MockMvcResultMatchers.jsonPath("$.result").value("0")
-                ).andExpect(
-                        MockMvcResultMatchers.jsonPath("$.response.resultCode").value("OK")
-                ).andDo(MockMvcResultHandlers.print());
+                MockMvcRequestBuilders.post("http://localhost:8080/api/minus")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(json)
+        ).andExpect(
+                MockMvcResultMatchers.status().isOk()
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$.result").value("0")
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$.response.resultCode").value("OK")
+        ).andDo(MockMvcResultHandlers.print());
     }
 
 }

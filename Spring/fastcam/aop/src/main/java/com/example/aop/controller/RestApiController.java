@@ -12,7 +12,7 @@ public class RestApiController {
 
     @GetMapping("/get/{id}")
     public String get(@PathVariable Long id,
-                    @RequestParam String name) {
+                      @RequestParam String name) {
         return id + " " + name;
     }
 
