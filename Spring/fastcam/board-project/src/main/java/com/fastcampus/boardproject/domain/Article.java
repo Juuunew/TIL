@@ -7,9 +7,13 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.LinkedHashSet;
+import java.util.Objects;
+import java.util.Set;
 
 @Getter
 @ToString
@@ -20,7 +24,7 @@ import java.time.LocalDateTime;
         @Index(columnList = "createdBy"),
 })
 @Entity
-public class Article {
+public class Article extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,21 +41,47 @@ public class Article {
     @Setter
     private String hashtag;
 
-    @CreatedDate
-    @Column(nullable = false)
-    private LocalDateTime createdAt;
+    @ToString.Exclude
+    @OrderBy("id")
+    @OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
+    private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
 
-    @CreatedBy
-    @Column(nullable = false, length = 100)
-    private String createdBy;
+    protected Article() {
+    }
 
-    @LastModifiedDate
-    @Column(nullable = false)
-    private LocalDateTime modifiedAt;
+    private Article(String title, String content, String hashtag) {
+        this.title = title;
+        this.content = content;
+        this.hashtag = hashtag;
+    }
 
-    @LastModifiedBy
-    @Column(nullable = false, length = 100)
-    private String modifiedBy;
+    public static Article of(String title, String content, String hashtag) {
+        return new Article(title, content, hashtag);
+    }
 
+    // TODO: 데이터베이스 접근 로직 2 23분
+/*    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Article article)) return false;
+        return id != null && id.equals(article.id);
+    }
+
+    @Override
+    public int hasCode() {
+        return Objects.hash(id);
+    }*/
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Article article)) return false;
+        return id != null && id.equals(article.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
 
